@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 const uuid = require('uuid')
-const unoconv = require('unoconv2')
+const unoconv = require('unoconv3')
 const formats = require('../lib/data/formats.json')
 const pkg = require('../package.json')
 
@@ -16,6 +16,10 @@ module.exports.handleUpload = (request, reply) => {
     const pathPre = process.cwd() + '/uploads/' + temporaryName
     const fileNameTempOriginal = pathPre + '.' + fileEndingOriginal
     const file = fs.createWriteStream(fileNameTempOriginal)
+    const filters = Array.isArray(data.filter) ? data.filter : [data.filter]
+    const options = {filters}
+
+    console.log(options)
 
     file.on('error', (error) => {
       console.error(error)
@@ -28,7 +32,7 @@ module.exports.handleUpload = (request, reply) => {
         console.error(err)
         reply(err)
       } else {
-        unoconv.convert(fileNameTempOriginal, convertToFormat, (err, result) => {
+        unoconv.convert(fileNameTempOriginal, convertToFormat, options, (err, result) => {
           if (err) {
             console.error(err)
             fs.unlink(fileNameTempOriginal, error => {
