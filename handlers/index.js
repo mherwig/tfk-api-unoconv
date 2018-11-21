@@ -16,7 +16,12 @@ module.exports.handleUpload = (request, reply) => {
     const pathPre = process.cwd() + '/uploads/' + temporaryName
     const fileNameTempOriginal = pathPre + '.' + fileEndingOriginal
     const file = fs.createWriteStream(fileNameTempOriginal)
-    const filters = Array.isArray(data.filter) ? data.filter : [data.filter]
+    
+    const filters = []
+    if (data.filter) {
+      Array.isArray(data.filter) ? data.filter : [data.filter]
+    }
+    
     const options = {filters}
 
     console.log(options)
