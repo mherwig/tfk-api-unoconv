@@ -2,17 +2,16 @@
   "name": "tfk-api-unoconv",
   "version": "3.2.2",
   "private": true,
-  "description": "Unoconv as a webservice",
+  "description": "Unoconv as a webservice based on zrrrzzt/tfk-api-unoconv by Geir Gåsodden using a different unoconv wrapper",
   "author": {
-    "name": "Geir Gåsodden",
-    "email": "geir.gasodden@pythonia.no",
-    "url": "https://github.com/zrrrzzt"
+    "name": "Mike Herwig",
+    "url": "https://github.com/mherwig"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zrrrzzt/tfk-api-unoconv/issues"
+    "url": "https://github.com/mherwig/tfk-api-unoconv/issues"
   },
-  "homepage": "https://github.com/zrrrzzt/tfk-api-unoconv",
+  "homepage": "https://github.com/mherwig/tfk-api-unoconv",
   "main": "index.js",
   "engines": {
     "node": ">=8.9.4"
@@ -27,12 +26,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/zrrrzzt/tfk-api-unoconv.git"
+    "url": "git+https://github.com/mherwig/tfk-api-unoconv.git"
   },
   "dependencies": {
     "hapi": "16.7.0",
     "inert": "4.2.1",
-    "unoconv2": "1.0.0",
+    "unoconv3": "git://github.com/mherwig/unoconv3.git",
     "uuid": "3.3.2"
   },
   "devDependencies": {

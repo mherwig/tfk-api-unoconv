@@ -1,9 +1,6 @@
-[![Build Status](https://travis-ci.org/zrrrzzt/tfk-api-unoconv.svg?branch=master)](https://travis-ci.org/zrrrzzt/tfk-api-unoconv)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
-
 # tfk-api-unoconv
 
-Unoconv as a webservice
+Unoconv as a webservice based on [zrrrzzt/tfk-api-unoconv](https://github.com/zrrrzzt/tfk-api-unoconv) by Geir Gåsodden using a different unoconv wrapper
 
 ## Docker
 
@@ -74,5 +71,3 @@ $ docker run --env-file=docker.env -d -p 80:3000 --name unoconv-webservice unoco
 ## License
 
 [MIT](LICENSE)
-
-![tfk-api-unoconv](https://robots.kebabstudios.party/tfk-api-unoconv.png "Robohash image of tfk-api-unoconv")
