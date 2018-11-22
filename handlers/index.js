@@ -17,14 +17,12 @@ module.exports.handleUpload = (request, reply) => {
     const fileNameTempOriginal = pathPre + '.' + fileEndingOriginal
     const file = fs.createWriteStream(fileNameTempOriginal)
     
-    const filters = []
+    let filters = []
     if (data.filter) {
-      Array.isArray(data.filter) ? data.filter : [data.filter]
+      filters = Array.isArray(data.filter) ? data.filter : [data.filter]
     }
     
     const options = {filters}
-
-    console.log(options)
 
     file.on('error', (error) => {
       console.error(error)
